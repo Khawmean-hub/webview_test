@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <button onclick="shareContent()">Share</button>
+
+    <script>
+        function shareContent() {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Share this content',
+            text: 'This is the content to be shared',
+            url: 'https://example.com' // Optional URL to share
+          })
+          .then(() => console.log('Shared successfully'))
+          .catch(error => console.error('Error sharing:', error));
+        } else {
+          // Handle browsers that don't support the API
+        }
+      }
+      </script>
+</body>
+</html>
