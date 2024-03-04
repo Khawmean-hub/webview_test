@@ -13,7 +13,7 @@
             
             ramdomBackgroundColor()
             
-            Sharing.postMessage('Hello World being called from Javascript code : https://example.com');
+            window.postMessage('message from webview', 'Sharing');
 
             if (navigator.share) {
             navigator.share({
