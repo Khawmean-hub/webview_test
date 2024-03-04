@@ -10,6 +10,7 @@
 
     <script>
         function shareContent() {
+            ramdomBackgroundColor()
         if (navigator.share) {
           navigator.share({
             title: 'Share this content',
@@ -21,6 +22,11 @@
         } else {
           // Handle browsers that don't support the API
         }
+      }
+
+      function ramdomBackgroundColor(){
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = "#" + randomColor;
       }
       </script>
 </body>
