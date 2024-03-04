@@ -12,9 +12,10 @@
         function shareContent() {
             
             ramdomBackgroundColor()
+            try{
+                window.Sharing.postMessage('message from webview');
+            }catch(e){}
             
-            window.Sharing.postMessage('message from webview');
-
             if (navigator.share) {
             navigator.share({
                 title: 'Share this content',
