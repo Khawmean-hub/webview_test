@@ -10,18 +10,23 @@
 
     <script>
         function shareContent() {
+            
             ramdomBackgroundColor()
-        if (navigator.share) {
-          navigator.share({
-            title: 'Share this content',
-            text: 'This is the content to be shared',
-            url: 'https://example.com' // Optional URL to share
-          })
-          .then(() => console.log('Shared successfully'))
-          .catch(error => console.error('Error sharing:', error));
-        } else {
-          // Handle browsers that don't support the API
-        }
+            
+            Sharing.postMessage('Hello World being called from Javascript code : https://example.com');
+
+            if (navigator.share) {
+            navigator.share({
+                title: 'Share this content',
+                text: 'This is the content to be shared',
+                url: 'https://example.com' // Optional URL to share
+            })
+            .then(() => console.log('Shared successfully'))
+            .catch(error => console.error('Error sharing:', error));
+            } else {
+            // Handle browsers that don't support the API
+            }
+
       }
 
       function ramdomBackgroundColor(){
